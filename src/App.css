@@ -14,6 +14,10 @@ font-family: 'Quattrocento Sans', sans-serif;
   font-family: 'Newsreader', serif;
   font-size:20px;
 }
+.upload-quote{
+  margin-top:20px;
+  margin-left:17px;
+}
 .row-component{
 border:2px solid white;
 background-color:#d3e0ea;

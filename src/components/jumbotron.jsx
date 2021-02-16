@@ -1,3 +1,4 @@
+import React,{useState} from 'react';
 import { Jumbotron,Container,Row,Col } from 'react-bootstrap';
 import UploadButtons from './uploadbuttons.jsx'
 import {app} from '../firebase/firebase.utils.js'
@@ -5,11 +6,20 @@ import SVG from './svg'
 import EFFECTS from './effects.jsx'
 import CARD from './card.jsx'
 function Jumbotronreact(){
+  const [upload,setupload]=useState('')
+  const [isupload,setisupload]=useState(false)
   const onChange = (e) => {
      const file = e.target.files[0];
      const storageRef = app.storage().ref()
      const fileRef = storageRef.child(file.name)
      fileRef.put(file).then(() => {
+      fileRef.getDownloadURL().then(function (url) {
+                console.log(url);
+                setupload(url);
+                if(url){
+                  setisupload(true)
+                }
+});
        console.log("Uploaded a file")
      })
    }
@@ -37,6 +47,9 @@ function Jumbotronreact(){
           <div className="upload-button">
             <UploadButtons type="file" onChange={onChange}/>
         </div>
+        {
+          isupload && <a href={upload} target='_blank'><small>{upload}</small></a>
+        }
         </Col>
         </Row>
       </Container>

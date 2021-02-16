@@ -10,10 +10,10 @@ import convert from '../effectimages/convert.png'
 function Effects(){
   return  <div>
     <img className="music" src={music}  alt='music'/>
-    <img class="mp3" src={mp3} alt='mp3'/>
-    <img class="aac" src={aac} alt='aac'/>
-    <img class="mp4" src={mp4} alt='mp4'/>
-    <img class="wmv" src={wmv} alt='wmv'/>
+    <img className="mp3" src={mp3} alt='mp3'/>
+    <img className="aac" src={aac} alt='aac'/>
+    <img className="mp4" src={mp4} alt='mp4'/>
+    <img className="wmv" src={wmv} alt='wmv'/>
     <img className="rightarrow left" src={rightarrow} alt='arrow' />
     <img  className="upload left" src={upload} alt='upload'/>
     <img  className="rightarrow" src={rightarrow} alt='arrow'/>

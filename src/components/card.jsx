@@ -4,28 +4,28 @@ import ImageIcon from '@material-ui/icons/Image';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import {Row,Col} from 'react-bootstrap';
 function CARD(){
-  return <div><MusicNoteIcon /> <span class='span'>Audio</span>
+  return <div><MusicNoteIcon /> <span className='span'>Audio</span>
   <Row className='row-component '>
     <Col>.mp3</Col>
     <Col>.aac</Col>
     <Col>.mp4</Col>
     <Col>.wmv</Col>
   </Row>
-  <DuoIcon /> <span class='span'>Video</span>
+  <DuoIcon /> <span className='span'>Video</span>
   <Row className='row-component'>
     <Col>.3gp</Col>
     <Col>.avi</Col>
     <Col>.mov</Col>
     <Col>.mkv</Col>
   </Row>
-  <ImageIcon /> <span class='span'>Image</span>
+  <ImageIcon /> <span className='span'>Image</span>
   <Row className='row-component'>
     <Col>.jpg</Col>
     <Col>.png</Col>
     <Col>.gif</Col>
     <Col>.jpeg</Col>
   </Row>
-  <InsertDriveFileIcon /> <span class='span'>Image</span>
+  <InsertDriveFileIcon /> <span className='span'>Image</span>
   <Row className='row-component'>
     <Col>.doc</Col>
     <Col>.xls</Col>

@@ -23,11 +23,7 @@ function Navbarreact({currentUser}){
     </Link>
     </Nav.Link>
   }
-  {/* <Nav.Link href="#signup">
-    <Link to='signin'>
-    <ExitToAppIcon /> SignUp
-  </Link>
-  </Nav.Link> */}
+
 </Nav>
   </Navbar>
 }

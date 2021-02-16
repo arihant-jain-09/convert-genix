@@ -1,9 +1,18 @@
-import {  Button,Jumbotron,Container,Row,Col } from 'react-bootstrap';
-import BackupIcon from '@material-ui/icons/Backup';
+import { Jumbotron,Container,Row,Col } from 'react-bootstrap';
+import UploadButtons from './uploadbuttons.jsx'
+import {app} from '../firebase/firebase.utils.js'
 import SVG from './svg'
 import EFFECTS from './effects.jsx'
 import CARD from './card.jsx'
 function Jumbotronreact(){
+  const onChange = (e) => {
+     const file = e.target.files[0];
+     const storageRef = app.storage().ref()
+     const fileRef = storageRef.child(file.name)
+     fileRef.put(file).then(() => {
+       console.log("Uploaded a file")
+     })
+   }
   return <div>
     <Jumbotron fluid >
       <div className='jumbo'>
@@ -24,9 +33,9 @@ function Jumbotronreact(){
         </Col>
         <Col>
           <CARD />
-          <Button className='upload-button' variant="outline-dark"><BackupIcon/> Upload</Button>
-          <div className="3d">
-
+          {/* <Button className='upload-button' variant="outline-dark"><BackupIcon/> Upload</Button> */}
+          <div className="upload-button">
+            <UploadButtons type="file" onChange={onChange}/>
         </div>
         </Col>
         </Row>

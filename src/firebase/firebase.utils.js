@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 import 'firebase/auth'
+import 'firebase/storage'
 const config={
     apiKey: "AIzaSyDMkItbcC4EiZ1zLHXpO_in5RColX2AVSU",
     authDomain: "convert-genix.firebaseapp.com",
@@ -12,7 +13,6 @@ const config={
   };
   export async function CreateUserProfileDocument(userAuth,additionalData) {
      if(!userAuth) return;
-     // console.log(firestore.doc('users/12324335'))
      const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
@@ -34,7 +34,7 @@ const config={
 
   return userRef;
    }
-  firebase.initializeApp(config)
+  export const app=firebase.initializeApp(config)
   export const auth=firebase.auth();
   export const firestore=firebase.firestore()
 

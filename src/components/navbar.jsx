@@ -2,6 +2,7 @@ import {Nav,Navbar } from 'react-bootstrap';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {Link} from 'react-router-dom';
 import {auth} from '../firebase/firebase.utils.js'
+import {connect} from 'react-redux';
 import CG from '../CG.ico'
 import '../App.css'
 function Navbarreact({currentUser}){
@@ -27,4 +28,7 @@ function Navbarreact({currentUser}){
 </Nav>
   </Navbar>
 }
-export default Navbarreact;
+const mapStateToProps = state=>({
+  currentUser : state.user.currentUser
+})
+export default connect(mapStateToProps)(Navbarreact);
